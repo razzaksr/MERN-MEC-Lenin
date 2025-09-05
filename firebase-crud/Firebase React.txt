@@ -1,0 +1,9 @@
+React(UI), Firebase(API) and Firestore(Data)
+    Functionalities:
+    firebase >> API
+        addDoc  >> Create new dcoument in firestore
+        getDoc  >> Read document
+        updateDoc> Update document
+        deleteDoc> Delete document
+
+
