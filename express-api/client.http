@@ -1,0 +1,11 @@
+@api = http://localhost:1234
+
+get {{api}}/hi
+###
+get {{api}}/exchange/6000
+###
+get {{api}}/bmi/72/174
+###
+get {{api}}/bmi/45/162
+###
+get {{api}}/bmi/72/162
