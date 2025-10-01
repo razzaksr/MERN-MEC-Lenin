@@ -9,3 +9,11 @@ get {{api}}/bmi/72/174
 get {{api}}/bmi/45/162
 ###
 get {{api}}/bmi/72/162
+###
+post {{api}}/body-bmi
+Content-Type: application/json
+
+{
+  "weight": 72,
+  "height": 174
+}

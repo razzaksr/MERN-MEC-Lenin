@@ -1,0 +1,78 @@
+MERN Stack
+phase 1:
+	Mongo DB
+Phase 2:
+	HTML, CSS, Bootstrap, Java Script
+Phase 3:
+	React JS
+Phase 4:
+	React with Firebase
+	UI		>> React JS
+	API		>> Firebase>> addDoc, getDoc, updateDoc
+	Data		>> Firestore
+
+Phase 5:
+	API >> Backend development
+
+	modules:
+		express
+		nodemon
+	API as Web service(rest) >> response as JSON
+		async functions with URL path and mappings
+		and it will be called while mentioning that URL 
+		eg: CRUD >> List
+		mapping:
+			post
+			get
+			put
+			delete
+
+		Modular approach:
+			routers
+			server
+
+
+each mapping functions contains two parameters>> request, response
+
+
+request:
+	url
+	parameter		>> data to be mentioned in the URL
+						eg: www.amazon.in/s=Rebok-shoe
+	body				>> data(JSON) to be passed via http body so that it can't be visible
+	headers>> authentication
+
+response:
+	status>> 400, 500, 401, 403, 200, 201
+	data	>> json
+	
+	1. status with data
+	2. data>> HTML
+	3. data>> JSON
+
+Node Project:
+	default project>> name of the project same as folder where the below command to be executed
+		npm init -y
+	customized project
+		npm init 
+		
+
+
+
+
+
+Web service API>>
+	Client		>> rest client
+	API			>> express
+	Database		
+
+
+task 1: fd calculator 
+	request>>year, amount, senior/normal
+	response> maturity amount
+task 2: loan calculator
+	request>> loan amount
+	response>> EMI by calculating standard PL interest
+
+body-parser
+	open and extract the request body contents
