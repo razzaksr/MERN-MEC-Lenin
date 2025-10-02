@@ -80,7 +80,7 @@ body-parser
 
 CRUD Operations:
 
-1.	Storage >> temp	>> data.js >> list of json
+1. Storage >> temp	>> data.js >> list of json
 		export>> module.export = {}
 	Functionalities to perform CRUD	>> dao.js
 		require
@@ -89,6 +89,14 @@ CRUD Operations:
 2. Storage >> file >> perm
 	fs, path
 
+3. Storage >> MongoDB Atlas>> databases, collections
+	modules>> mongoose, dotenv
+	approach>>
+		connect.js>> mongodb connectivity
+		model.js	>> document schema
+		mongodao.js	>> CRUD >> save, find, findOne, findOneAndUpdateOne, findOneAndDeleteOne
+		mongocontroller
+		index.js
 
 Routers:
 Flipkart
@@ -109,10 +117,10 @@ Car:
 		actual/>> new
 
 Flow
-1. temporary CRUD>> localhost:1234/stat
-http>> index.js>>statcontroller>>dao>>data.js
-2. Permanent CRUD>> localhost:1234/actual
-http>> index.js>>permcontroller>>permdao>>perm.json
+	1. temporary CRUD>> localhost:1234/stat
+	http>> index.js>>statcontroller>>dao>>data.js
+	2. Permanent CRUD>> localhost:1234/actual
+	http>> index.js>>permcontroller>>permdao>>perm.json
 
 
 		
