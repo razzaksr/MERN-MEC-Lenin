@@ -1,4 +1,32 @@
-@url = http://localhost:1234
+### in memory, temporary storage client call
+@surl = http://localhost:1234/stat
+
+get {{surl}}/
+###
+post {{surl}}/
+Content-Type: application/json
+
+{
+    "regno": "KA01AB1234",
+    "brand": "Suzuki",
+    "model": "Swift",
+    "color": "Red",
+    "price": 500000
+}
+###
+patch {{surl}}/KA01AB1234
+Content-Type: application/json
+
+{
+    "color": "Black",
+    "price": 400000
+}
+###
+delete {{surl}}/KA-01-AB-1234
+###
+delete {{url}}/TN01AB1234
+### actual, permanent storage client call
+@url = http://localhost:1234/actual
 
 get {{url}}/
 ###

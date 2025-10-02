@@ -87,4 +87,32 @@ CRUD Operations:
 
 	
 2. Storage >> file >> perm
-	fs, path	
+	fs, path
+
+
+Routers:
+Flipkart
+	Kart>> flipkart.com/kart >> router
+		C>> flipkart.com/kart/new
+		R>> flipkart.com/kart/view
+		U>> flipkart.com/kart/edit
+		D>> flipkart.com/kart/remove
+
+	Orders>> flipkart.com/orders >> router	
+		C>> flipkart.com/orders/place
+		R>> flipkart.com/orders/view
+Car:
+	temp		>> /stat
+		stat/>> new 
+		stat/>> read
+	perm	>> /actual
+		actual/>> new
+
+Flow
+1. temporary CRUD>> localhost:1234/stat
+http>> index.js>>statcontroller>>dao>>data.js
+2. Permanent CRUD>> localhost:1234/actual
+http>> index.js>>permcontroller>>permdao>>perm.json
+
+
+		
