@@ -12,3 +12,15 @@ Content-Type: application/json
     "color": "Red",
     "price": 500000
 }
+###
+patch {{url}}/TN01GH3456
+Content-Type: application/json
+
+{
+    "color": "Blue",
+    "price": 850000
+}
+###
+delete {{url}}/KA-01-AB-1234
+###
+delete {{url}}/TN01GH3456

@@ -16,6 +16,27 @@ app.post('/', async(req, res) => {
     res.json(createdRecord);
 });
 
+app.patch('/:usereg', async(req, res) => {
+    const usereg = req.params.usereg;
+    const updatedRecord = req.body;
+    const result = dao.updateRecord(usereg, updatedRecord);
+    if (result) {
+        res.json(result);
+    } else {
+        res.status(404).json({ message: 'Record not found' });
+    }
+});
+
+app.delete('/:usereg', async(req, res) => {
+    const usereg = req.params.usereg;
+    const result = dao.deleteRecord(usereg);
+    if (result) {
+        res.json(result);
+    } else {
+        res.status(404).json({ message: 'Record not found' });
+    }
+});
+
 const PORT = 1234;
 
 app.listen(PORT, () => {
