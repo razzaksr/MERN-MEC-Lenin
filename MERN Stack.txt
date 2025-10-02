@@ -76,3 +76,12 @@ task 2: loan calculator
 
 body-parser
 	open and extract the request body contents
+
+
+CRUD Operations:
+	Storage >> temp	>> data.js >> list of json
+		export>> module.export = {}
+	Functionalities to perform CRUD	>> dao.js
+		require
+
+	

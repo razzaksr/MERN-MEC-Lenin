@@ -1,0 +1,14 @@
+@url = http://localhost:1234
+
+get {{url}}/
+###
+post {{url}}/
+Content-Type: application/json
+
+{
+    "regno": "KA-01-AB-1234",
+    "brand": "Suzuki",
+    "model": "Swift",
+    "color": "Red",
+    "price": 500000
+}
