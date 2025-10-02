@@ -79,9 +79,12 @@ body-parser
 
 
 CRUD Operations:
-	Storage >> temp	>> data.js >> list of json
+
+1.	Storage >> temp	>> data.js >> list of json
 		export>> module.export = {}
 	Functionalities to perform CRUD	>> dao.js
 		require
 
 	
+2. Storage >> file >> perm
+	fs, path	

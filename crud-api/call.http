@@ -6,21 +6,21 @@ post {{url}}/
 Content-Type: application/json
 
 {
-    "regno": "KA-01-AB-1234",
+    "regno": "KA01AB1234",
     "brand": "Suzuki",
     "model": "Swift",
     "color": "Red",
     "price": 500000
 }
 ###
-patch {{url}}/TN01GH3456
+patch {{url}}/KA01AB1234
 Content-Type: application/json
 
 {
-    "color": "Blue",
-    "price": 850000
+    "color": "Black",
+    "price": 400000
 }
 ###
 delete {{url}}/KA-01-AB-1234
 ###
-delete {{url}}/TN01GH3456
+delete {{url}}/TN01AB1234

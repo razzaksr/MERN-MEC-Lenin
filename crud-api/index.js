@@ -1,5 +1,6 @@
 const app = require('express')();
-const dao = require('./dao');
+// const dao = require('./dao');
+const dao = require('./permdao');
 const parser = require('body-parser');
 
 app.use(parser.json());
