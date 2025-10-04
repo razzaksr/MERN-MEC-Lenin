@@ -121,6 +121,39 @@ Flow
 	http>> index.js>>statcontroller>>dao>>data.js
 	2. Permanent CRUD>> localhost:1234/actual
 	http>> index.js>>permcontroller>>permdao>>perm.json
+	3. Database CRUD>> localhost:1234/db
+	http>> index>> atlascontroller>>atlasdao>>model>>contact(db onfig)
 
 
-		
+
+Modular approach connect with MongoDB
+
+connect>> mongo db configuration
+schema>> mongoose
+dao>> CRUD>> save, findOne, find, findOneAndUpdate
+controller>> router call to dao
+index>> controller will be added by any path
+
+
+Security:
+username and password
+role based
+jsonwebtoken
+bcrypt
+
+
+token flow>>
+visit app>> username and password>> authenticated by jwt>> generate token(base64encode)>> it will be saved for some time(days, weeks, hours)
+
+token:
+header>> signing algorithm>> encrypt
+payload>> subject>> user data>> username, role, full name
+secret/signature>> verify
+
+
+
+userSchema>> fullname, username, password(hashed via pre function), role(default officials)
+userDao		>> registerUser
+userController	>> signup
+index>> auth
+

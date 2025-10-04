@@ -1,0 +1,11 @@
+@log = http://localhost:1234/auth
+
+post {{log}}/signup
+Content-Type: application/json
+
+{
+    "fullname":"Razak Mohamed S",
+    "username":"razak",
+    "password":"razak123",
+    "role":"customer"
+}

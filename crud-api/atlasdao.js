@@ -1,4 +1,4 @@
-const car = require('./model')
+const {car} = require('./model')
 
 // CRUD
 const getAllRecords = async() => {

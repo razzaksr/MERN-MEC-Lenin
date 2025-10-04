@@ -3,6 +3,7 @@ const communicate = require('./contact.js')
 const perm = require('./permcontroller.js')
 const stat = require('./statcontroller.js')
 const atlas = require('./atlascontroller.js')
+const auth = require('./usercontroller.js')
 const parser = require('body-parser')
 
 app.use(parser.json())
@@ -13,6 +14,7 @@ communicate()
 app.use('/actual', perm)
 app.use('/stat', stat)
 app.use('/db',atlas)
+app.use('/auth',auth)
 
 const PORT = 1234
 
