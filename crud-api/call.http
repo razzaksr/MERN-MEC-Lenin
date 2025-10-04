@@ -1,3 +1,29 @@
+### mongo db atlas database client call
+@durl = http://localhost:1234/db
+
+get {{durl}}/
+###
+post {{durl}}/
+Content-Type: application/json
+
+{
+    "regno": "TN54U9478",
+    "brand": "Suzuki",
+    "model": "Ignis",
+    "color": "Silver",
+    "price": 550000
+}
+###
+patch {{durl}}/TN54U9478
+Content-Type: application/json
+
+{
+    "color": "Black",
+    "price": 400000
+}
+###
+delete {{durl}}/TN54U9478
+
 ### in memory, temporary storage client call
 @surl = http://localhost:1234/stat
 
