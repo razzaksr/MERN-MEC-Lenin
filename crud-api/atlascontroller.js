@@ -1,18 +1,19 @@
 const atlasrouter = require('express').Router();
 const dao = require('./atlasdao');
+const { tokenVerification } = require('./middleware');
 // Routes/ endpoints
-atlasrouter.get('/', async(req, res) => {
+atlasrouter.get('/', tokenVerification ,async(req, res) => {
     const records = await dao.getAllRecords();
     res.json(records);
 });
 
-atlasrouter.post('/', async(req, res) => {
+atlasrouter.post('/', tokenVerification ,async(req, res) => {
     const newRecord = req.body;
     const createdRecord = await dao.createRecord(newRecord);
     res.json(createdRecord);
 });
 
-atlasrouter.patch('/:usereg', async(req, res) => {
+atlasrouter.patch('/:usereg', tokenVerification ,async(req, res) => {
     const usereg = req.params.usereg;
     const updatedRecord = req.body;
     const result = await dao.updateRecord(usereg, updatedRecord);
@@ -23,7 +24,7 @@ atlasrouter.patch('/:usereg', async(req, res) => {
     }
 });
 
-atlasrouter.delete('/:usereg', async(req, res) => {
+atlasrouter.delete('/:usereg', tokenVerification ,async(req, res) => {
     const usereg = req.params.usereg;
     const result = await dao.deleteRecord(usereg);
     if (result) {

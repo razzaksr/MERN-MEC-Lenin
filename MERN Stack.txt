@@ -157,3 +157,27 @@ userDao		>> registerUser
 userController	>> signup
 index>> auth
 
+authorization flow:
+	login >> username and password>> token
+
+	endpoints >> secured>> must include Authorization Header with Bearer 
+		access endpoint with authorized token
+		if not 401 unauthorized error
+
+	Token generation:
+		jwt>> jsonwebtoken>> sign(payload, secret, expire)
+	Token Verification:
+		Authorization: Bearer TOKEN
+		middleware: token verification
+			whenever the request reached at the endpoint it will execute first
+			>> request>> index.js>> controller >> endpoint>> middleware>> enpoint other logic
+
+			1. it'll check whether the request contains Authorization Header or not
+			2. verify(token, secret)
+			3. payload may contain the username since token generation logic included it
+			4. check the extracted username is available in the userlist
+			5. if so next()>> forward/ proceed with other logic of the same endpoint
+			6. if not forbidden >> 403
+		middleware: role verification
+			endpoints are secured with jwt and specified role
+			even though authorized user logging in endpoint which secured by role check they become forbidden access

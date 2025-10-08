@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken')
 const {user} = require('./model')
 const bcrypt = require('bcryptjs')
+require('dotenv').config()
 
 // register new user
 const registerUser = async(newUser) => {
@@ -11,6 +12,15 @@ const registerUser = async(newUser) => {
     return created
 }
 
-module.exports = { registerUser }
+const logginIn = async(obj) => {
+    const{username,password} = obj
+    const exists = await user.findOne({username})
+    if(!exists || !(await bcrypt.compare(password,exists.password)))
+        return null
+    const token = jwt.sign({"logged":username},process.env.SECRET_KEY,{expiresIn:'1hr'})
+    return token
+}
+
+module.exports = { registerUser, logginIn }
 
 

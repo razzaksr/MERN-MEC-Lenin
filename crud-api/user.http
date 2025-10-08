@@ -1,5 +1,42 @@
-@log = http://localhost:1234/auth
+@durl = http://localhost:1234/db
 
+get {{durl}}/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dnZWQiOiJsZW5pbiIsImlhdCI6MTc1OTkzMzYzNCwiZXhwIjoxNzU5OTM3MjM0fQ.ubeY1yL1rW6_xncg6uLbZ7gGUMwQkhIy2YGOaotcxZo
+###
+post {{durl}}/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dnZWQiOiJsZW5pbiIsImlhdCI6MTc1OTkzMzYzNCwiZXhwIjoxNzU5OTM3MjM0fQ.ubeY1yL1rW6_xncg6uLbZ7gGUMwQkhIy2YGOaotcxZo
+Content-Type: application/json
+
+{
+    "regno": "TN90U8767",
+    "brand": "TATA",
+    "model": "Altroz",
+    "color": "White",
+    "price": 750000
+}
+###
+patch {{durl}}/TN90U8767
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dnZWQiOiJyYXphayIsImlhdCI6MTc1OTkzMzkzNSwiZXhwIjoxNzU5OTM3NTM1fQ.yRuw89xLCAXNUOaLaxh4uLZy4iTAf1c00c8nW0xXS_0
+Content-Type: application/json
+
+{
+    "color": "Black",
+    "price": 700000
+}
+###
+delete {{durl}}/TN54U9478
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dnZWQiOiJsZW5pbiIsImlhdCI6MTc1OTkzMzYzNCwiZXhwIjoxNzU5OTM3MjM0fQ.ubeY1yL1rW6_xncg6uLbZ7gGUMwQkhIy2YGOaotcxZo
+
+###
+@log = http://localhost:1234/auth
+post {{log}}/signin
+Content-Type: application/json
+
+{
+    "username":"razak",
+    "password":"razak123"
+}
+###
 post {{log}}/signup
 Content-Type: application/json
 
