@@ -1,7 +1,7 @@
 @durl = http://localhost:1234/db
 
 get {{durl}}/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dnZWQiOiJsZW5pbiIsImlhdCI6MTc1OTkzMzYzNCwiZXhwIjoxNzU5OTM3MjM0fQ.ubeY1yL1rW6_xncg6uLbZ7gGUMwQkhIy2YGOaotcxZo
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dnZWQiOiJyYXphayIsImlhdCI6MTc2MDAxOTg4NCwiZXhwIjoxNzYwMDIzNDg0fQ.jn4PTDu9XgTGeRyih4OhQfddEU9O9pz5qHcbHzCjTKc
 ###
 post {{durl}}/
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dnZWQiOiJsZW5pbiIsImlhdCI6MTc1OTkzMzYzNCwiZXhwIjoxNzU5OTM3MjM0fQ.ubeY1yL1rW6_xncg6uLbZ7gGUMwQkhIy2YGOaotcxZo

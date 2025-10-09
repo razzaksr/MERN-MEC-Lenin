@@ -181,3 +181,22 @@ authorization flow:
 		middleware: role verification
 			endpoints are secured with jwt and specified role
 			even though authorized user logging in endpoint which secured by role check they become forbidden access
+
+
+
+
+Integration:
+	Mongo DB	>> data
+	Back end >> API
+		enable cors
+	Front end >> React JS
+		login			>> signin	>> token
+		dashboard
+		car View
+		add
+		update
+		delete
+		logout
+		apiCall >> axios call to backend url
+
+
