@@ -15,3 +15,27 @@ export const callView = async() => {
     })
     return received.data
 }
+export const callRemove = async(regno) => {
+    const received = await axios.delete(`${url}/db/${regno}`,{
+        headers:{
+            Authorization:`Bearer ${localStorage.getItem('token')}`
+        }
+    })
+    return received.data
+}
+export const callCreate = async(obj) => {
+    const received = await axios.post(`${url}/db/`,obj,{
+        headers:{
+            Authorization:`Bearer ${localStorage.getItem('token')}`
+        }
+    })
+    return received.data
+}
+export const callUpdate = async(obj) => {
+    const received = await axios.patch(`${url}/db/${obj.regno}`,obj,{
+        headers:{
+            Authorization:`Bearer ${localStorage.getItem('token')}`
+        }
+    })
+    return received.data
+}

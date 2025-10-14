@@ -200,3 +200,10 @@ Integration:
 		apiCall >> axios call to backend url
 
 
+Integration done
+
+Role Based Authentication: API
+backend points going to be checked for allowed roles if not 403 forbidden error
+
+
+

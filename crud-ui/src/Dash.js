@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react"
-import { callView } from "./apicall"
+import { callRemove, callView } from "./apicall"
+import { useNavigate } from "react-router-dom"
 
 export const Dashboard = () => {
     const[tempCars,setTempCars]=useState([])
-
+    const nav = useNavigate()
     const loggingOut = () => {
         localStorage.removeItem("token")
         window.location.assign("/")
@@ -16,7 +17,7 @@ export const Dashboard = () => {
     }
     const card = {
         display:"inline-block",
-        padding:"10px",
+        padding:"30px",
         border:"none",
         borderRadius:"20px",
         boxShadow:"10px 10px 10px grey",
@@ -33,6 +34,11 @@ export const Dashboard = () => {
         setTempCars(got)
     }
 
+    const contactDelete = async(value) =>{
+        await callRemove(value)
+        onView()
+    }
+
     return(
         <>
             <h1>Vehicle Dashboard</h1>
@@ -42,9 +48,13 @@ export const Dashboard = () => {
                         <div style={card}>
                             <h1>{obj.regno}</h1>
                             <h1>{obj.model}</h1>
-                            <div>
-                                <button>Edit</button>
-                                <button>Delete</button>
+                            <div style={{display:'flex',justifyContent:'space-between'}}>
+                                <button onClick={()=>{
+                                    nav(`/update/${obj.regno}`)
+                                }}>Edit</button>
+                                <button onClick={()=>{
+                                    contactDelete(obj.regno)
+                                }}>Delete</button>
                             </div>
                         </div>
                     ))

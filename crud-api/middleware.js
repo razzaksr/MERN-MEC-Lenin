@@ -5,12 +5,24 @@ const tokenVerification = async(req,res,next) =>{
     if(!token)
         res.status(401).json({error:"unauthorized/ token not found"})
     try{
-        const payload = jwt.verify(token,process.env.SECRET_KEY)
-        const foundUser = await user.findOne({username:payload.username}).select("-password")
+        const received = jwt.verify(token,process.env.SECRET_KEY)
+        console.log(JSON.stringify(received))
+        // since const token = jwt.sign({"logged":username},process.env.SECRET_KEY,{expiresIn:'1hr'})
+        // i have to use received.logged
+        // we are trying to find who has logged beacuse we need to perform role based authentication
+        // once logged person found we are storing in 'req.user' as custom property which can be used in roleVerification
+        req.user = await user.findOne({username:received.logged}).select("-password")
         next()
     }catch(err){
         res.status(403).json({error:`Forbidden`})
     }
 }
 
-module.exports = {tokenVerification}
+const roleVerification = (allowedRoles) => {
+  return (req, res, next) => {
+    if (!allowedRoles.includes(req.user.role)) return res.sendStatus(403);
+    next();
+  };
+};
+
+module.exports = {tokenVerification,roleVerification}

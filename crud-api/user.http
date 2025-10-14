@@ -1,18 +1,18 @@
 @durl = http://localhost:1234/db
 
 get {{durl}}/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dnZWQiOiJyYXphayIsImlhdCI6MTc2MDAxOTg4NCwiZXhwIjoxNzYwMDIzNDg0fQ.jn4PTDu9XgTGeRyih4OhQfddEU9O9pz5qHcbHzCjTKc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dnZWQiOiJyYXphayIsImlhdCI6MTc2MDQ1MzAwMiwiZXhwIjoxNzYwNDU2NjAyfQ.UdOWH8gdF7CKOJryfFZGmUZA854pYujVZCCBLQyjHx4
 ###
 post {{durl}}/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dnZWQiOiJsZW5pbiIsImlhdCI6MTc1OTkzMzYzNCwiZXhwIjoxNzU5OTM3MjM0fQ.ubeY1yL1rW6_xncg6uLbZ7gGUMwQkhIy2YGOaotcxZo
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dnZWQiOiJsZW5pbiIsImlhdCI6MTc2MDQ1MzA3OSwiZXhwIjoxNzYwNDU2Njc5fQ.bACr-ZvGyr1o0yI_PEnzCEGMpzuCNCfxZI-QQJRdTJk
 Content-Type: application/json
 
 {
-    "regno": "TN90U8767",
+    "regno": "TN90U1767",
     "brand": "TATA",
-    "model": "Altroz",
+    "model": "Tiago",
     "color": "White",
-    "price": 750000
+    "price": 650000
 }
 ###
 patch {{durl}}/TN90U8767
@@ -33,8 +33,8 @@ post {{log}}/signin
 Content-Type: application/json
 
 {
-    "username":"razak",
-    "password":"razak123"
+    "username":"lenin",
+    "password":"lenin123"
 }
 ###
 post {{log}}/signup
